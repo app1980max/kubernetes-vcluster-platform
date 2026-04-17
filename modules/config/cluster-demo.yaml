@@ -1,0 +1,21 @@
+
+apiVersion: management.loft.sh/v1
+kind: VirtualClusterInstance
+metadata:
+  name: developer1
+  namespace: loft-developer1   # must match the namespace you want
+  labels:
+    owner: admin
+spec:
+  templateRef:
+    name: default             # must exist in Loft
+    namespace: default
+  parameters:
+    values: |
+      syncer:
+        resources: {}
+          # limits:
+          #   cpu: "500m"
+          #   memory: "512Mi"
+      ingress:
+        enabled: true
