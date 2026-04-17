@@ -12,12 +12,6 @@ provider "helm" {
   }
 }
 
-module "metallb" {
-  source = "./modules/metallb"
-  depends_on = [kind_cluster.default]
-  kind_cluster_config_path = var.kind_cluster_config_path
-}
-
 module "nginx" {
   source = "./modules/nginx"
   depends_on = [module.metallb]
