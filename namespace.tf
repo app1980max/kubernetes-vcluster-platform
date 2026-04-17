@@ -1,6 +1,11 @@
 
-resource "kubernetes_namespace" "kubeai-system" {
+resource "kubernetes_namespace" "yevgeni" {
   metadata {
     name = "kubeai-system"
+
+    labels = {
+      "app"        = "yevgeni"
+      "managed-by" = "terraform"
+    }
   }
 }
