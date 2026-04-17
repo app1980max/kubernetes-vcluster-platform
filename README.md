@@ -49,4 +49,3 @@ kubectl config get-contexts
 kubectl config use-context kind-dev-cluster
 kubectl config use-context vcluster_vcluster-dev_vcluster-dev_kind-dev-cluster
 ```
-
