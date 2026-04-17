@@ -1,11 +1,9 @@
 
-resource "kubernetes_namespace" "innovation" {
-  metadata {
-    name = "innovation"
-
-    labels = {
-      managed-by = "terraform"
-      environment = "innovation"
-    }
+resource "kubernetes_namespace" "ingress-nginx" {
+metadata {
+name = "ingress-nginx"
+labels = {
+"app.kubernetes.io/managed-by" = "terraform"
   }
+ }
 }
