@@ -1,10 +1,10 @@
 
-resource "kubernetes_namespace" "yevgeni" {
+resource "kubernetes_namespace" "innovation" {
   metadata {
     name = "kubeai-system"
 
     labels = {
-      "app"        = "yevgeni"
+      "app"        = "innovation"
       "managed-by" = "terraform"
     }
   }
