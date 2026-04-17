@@ -2,6 +2,20 @@
 set -e
 
 # ------------------------------------------------
+# Install vCluster
+# ------------------------------------------------
+echo "Checking vCluster..."
+if command -v vcluster &> /dev/null
+then
+    echo "vCluster already installed: $(vcluster --version)"
+else
+    echo "Installing vCluster..."
+    curl -L https://github.com/loft-sh/vcluster/releases/latest/download/vcluster-linux-amd64 -o vcluster
+    sudo install -c -m 0755 vcluster /usr/local/bin
+    rm -f vcluster
+fi
+
+# ------------------------------------------------
 # Terraform
 # ------------------------------------------------
 echo "Checking Terraform..."
