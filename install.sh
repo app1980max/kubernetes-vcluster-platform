@@ -3,13 +3,13 @@
 set -e
 cat <<EOF
 Typical installation of the vCluster based on Kubernetes
-    1. ### Install Packages
+    1. ### Check Dependencies Before Install
     2. ### Deploy vCluster Platform 
-    3. ### Create virtual clusters
+    3. ### Create Virtual Clusters ( Dev\QA )
 EOF
 sleep 5
              echo      "----- ............................. -----"
-             echo           "--- INSTALL DEPENDENCIES ---"
+             echo            "--- CHECK DEPENDENCIES ---"
              echo      "----- ............................. -----"
              
 source modules/config/install.sh
