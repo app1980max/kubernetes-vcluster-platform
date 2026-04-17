@@ -28,7 +28,7 @@ accessKeys:
 
 ingress:
   enabled: true
-  host: vcluster-dev.appflex.io
+  host: vcluster-prod.appflex.io
 
 features:
   virtualClusters: true
