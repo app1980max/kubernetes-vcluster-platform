@@ -4,8 +4,8 @@ resource "kubernetes_namespace" "innovation" {
     name = "innovation"
 
     labels = {
-      "app"        = ""
-      "managed-by" = "terraform"
+      managed-by = "terraform"
+      environment = "innovation"
     }
   }
 }
