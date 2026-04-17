@@ -4,8 +4,8 @@ set -e
 cat <<EOF
 Typical installation of the vCluster based on Kubernetes
     1. ### Install Packages
-    2. ### Create Kubernetes Cluster
-    3. ### Deploy vCluster Platform    
+    2. ### Deploy vCluster Platform 
+    3. ### Create virtual clusters
 EOF
 sleep 5
              echo      "----- ............................. -----"
@@ -13,9 +13,7 @@ sleep 5
              echo      "----- ............................. -----"
              
 source modules/config/install.sh
-sleep 5 
-sudo docker ps -a || true
-
+sleep 5
              echo      "----- ............................. -----"
              echo           "---  LOAD-TERRAFORM-FILES  ---"
              echo      "----- ............................. -----"
@@ -24,7 +22,7 @@ terraform init || { echo "Terraform init failed"; exit 1; }
 terraform validate || exit 1 
 TF_VARS_FILE=${TF_VARS_FILE:-template.tfvars}
 terraform apply -var-file="$TF_VARS_FILE" -auto-approve
-sleep 10 && kubectl get pods -A 
+sleep 5 && kubectl get pods -A 
 
              echo      "----- ............................. -----"
              echo          "---  TERRAFORM-STATE-LIST  ---"
