@@ -16,29 +16,9 @@ controller:
     type: "RollingUpdate"
     rollingUpdate:
       maxUnavailable: 1
-  hostPort:
-    enabled: true
-  terminationGracePeriodSeconds: 0
+
   service:
     type: "LoadBalancer"
-  watchIngressWithoutClass: true
-  tolerations:
-  - key: "node-role.kubernetes.io/control-plane"
-    operator: "Exists"
-    effect: "NoSchedule"
-  # Optional: Use a node selector to *force* it onto the master node if others are available
-  nodeSelector:
-    node-role.kubernetes.io/control-plane: ""
-  #nodeSelector:
-  #  ingress-ready: "true"
-  #tolerations:
-  #  - key: "node-role.kubernetes.io/master"
-  #    operator: "Equal"
-  #    effect: "NoSchedule"
-  publishService:
-    enabled: false
-  extraArgs:
-    publish-status-address: "localhost"
 EOT
   ]
 
