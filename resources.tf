@@ -3,7 +3,7 @@
 
 module "nginx" {
   source = "./modules/nginx"
-  depends_on = [kubernetes_namespace.innovation]
+  depends_on = [kubernetes_namespace.ingress-nginx]
 }
 
 module "argo-events" {
