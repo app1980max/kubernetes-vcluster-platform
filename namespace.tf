@@ -1,7 +1,7 @@
 
-resource "kubernetes_namespace" "ingress-nginx" {
+resource "kubernetes_namespace" "kestra" {
 metadata {
-name = "ingress-nginx"
+name = "kestra"
 labels = {
 "app.kubernetes.io/managed-by" = "terraform"
   }
