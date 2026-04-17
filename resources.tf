@@ -3,7 +3,7 @@
 
 module "nginx" {
   source = "./modules/nginx"
-  depends_on = [module.metallb]
+  depends_on = [kubernetes_namespace.innovation]
 }
 
 module "argo-events" {
