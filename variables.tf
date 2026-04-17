@@ -1,35 +1,6 @@
 
-variable "kind_cluster_name" {
-  description = "The name of the Kind cluster"
+variable "kubeconfig_path" {
   type        = string
+  description = "Path to kubeconfig for the target cluster"
+  default     = "~/.kube/config"
 }
-
-variable "kind_cluster_config_path" {
-  description = "Path to save the Kind kubeconfig file"
-  type        = string
-}
-
-variable "k8s_version" {
-  description = "Kubernetes version to use for Kind nodes"
-  type        = string
-}
-
-variable "worker_count" {
-  description = "Number of worker nodes"
-  type        = number
-}
-
-variable "additional_control_planes_count" {
-  description = "Number of additional control planes for HA"
-  type        = number
-  default     = 2
-}
-
-variable "vclusters" {
-  description = "Mapping of vCluster logical names to internal identifiers"
-  type        = map(string)
-  default     = {}  # optional, can be empty
-}
-
-
-
