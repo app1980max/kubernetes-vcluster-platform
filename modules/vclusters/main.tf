@@ -25,15 +25,16 @@ resource "helm_release" "vcluster" {
 
 }
 
-# Export kubeconfig
-resource "null_resource" "kubeconfig" {
+data "kubernetes_secret" "vcluster_kubeconfig" {
   depends_on = [helm_release.vcluster]
 
-  provisioner "local-exec" {
-    command = "vcluster connect ${var.name} --namespace ${var.namespace} --print > kubeconfig-${var.name}"
+  metadata {
+    name      = "vc-${var.name}"
+    namespace = var.namespace
   }
 }
 
-output "kubeconfig_path" {
-  value = "${path.module}/kubeconfig-${var.name}"
+output "kubeconfig" {
+  value     = base64decode(data.kubernetes_secret.vcluster_kubeconfig.data["config"])
+  sensitive = true
 }
