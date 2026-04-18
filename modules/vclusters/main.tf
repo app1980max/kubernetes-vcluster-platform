@@ -22,11 +22,6 @@ resource "helm_release" "vcluster" {
     name  = "sync.toHost.services.enabled"
     value = "true"
   }
-
-  set {
-    name  = "persistence.size"
-    value = "10Gi"
-  }
 }
 
 data "kubernetes_secret" "vcluster_kubeconfig" {
