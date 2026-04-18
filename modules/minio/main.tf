@@ -19,7 +19,7 @@ resource "helm_release" "minio" {
       # Buckets to create automatically
       buckets = [
         { name = "airbyte" },
-        { name = "loki" },
+        { name = "data" },
         { name = "vclusters" }
       ]
 
