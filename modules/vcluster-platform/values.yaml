@@ -11,20 +11,23 @@ config:
   audit:
     enabled: false
   loftHost: vcluster-prod.appflex.io
-accessKeys:
-  - name: admin
-    key: "C1QY0GBytw4BqENKWzbTUwE4FI3lyFJEREz77N6DzSjRi90AhlxFEwjwy0lO5Wit"
-    user: admin
-    scope:
-      projects:
-        - default
-      resources:
-        - apiGroups:
-            - management.loft.sh
-          resources:
-            - "*"
-          verbs:
-            - "*"
+
+accessKeys: "C1QY0GBytw4BqENKWzbTUwE4FI3lyFJEREz77N6DzSjRi90AhlxFEwjwy0lO5Wit"
+
+#accessKeys:
+#  - name: admin
+#    key: "C1QY0GBytw4BqENKWzbTUwE4FI3lyFJEREz77N6DzSjRi90AhlxFEwjwy0lO5Wit"
+#    user: admin
+#    scope:
+#      projects:
+#        - default
+#      resources:
+#        - apiGroups:
+#            - management.loft.sh
+#          resources:
+#            - "*"
+#          verbs:
+#            - "*"
 
 ingress:
   enabled: true
@@ -56,3 +59,5 @@ metrics:
 
 monitoring:
   enabled: false
+
+
