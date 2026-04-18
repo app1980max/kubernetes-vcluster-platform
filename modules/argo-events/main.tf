@@ -12,3 +12,4 @@ resource "helm_release" "argo_events" {
   timeout         = 900
 }
 
+
