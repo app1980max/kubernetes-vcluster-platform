@@ -3,7 +3,6 @@
 
 module "nginx" {
   source = "./modules/nginx"
-  depends_on = [kubernetes_namespace.kestra]
 }
 
 module "argo-events" {
