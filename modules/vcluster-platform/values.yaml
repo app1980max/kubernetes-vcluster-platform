@@ -12,8 +12,6 @@ config:
     enabled: false
   loftHost: vcluster-prod.appflex.io
 
-accessKeys: "C1QY0GBytw4BqENKWzbTUwE4FI3lyFJEREz77N6DzSjRi90AhlxFEwjwy0lO5Wit"
-
 ingress:
   enabled: true
   host: vcluster-prod.appflex.io
