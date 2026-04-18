@@ -23,6 +23,10 @@ resource "helm_release" "vcluster" {
     value = "true"
   }
 
+  set {
+    name  = "persistence.size"
+    value = "10Gi"
+  }
 }
 
 data "kubernetes_secret" "vcluster_kubeconfig" {
