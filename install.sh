@@ -22,7 +22,6 @@ terraform init || { echo "Terraform init failed"; exit 1; }
 terraform validate || exit 1 
 TF_VARS_FILE=${TF_VARS_FILE:-template.tfvars}
 terraform apply -var-file="$TF_VARS_FILE" -auto-approve
-sleep 5 && kubectl get pods -A 
 
              echo      "----- ............................. -----"
              echo          "---  TERRAFORM-STATE-LIST  ---"
@@ -33,6 +32,6 @@ terraform state list  && kubectl get ing -A
 printf "\nYou should see 'dashboard' as a reponse below (if you do the ingress is working):\n"
 
              echo      "----- ............................. -----"
-             echo           "---  CLUSTER IS READY  ---"
+             echo           "---  vCLUSTER IS READY  ---"
              echo      "----- ............................. -----"
              
