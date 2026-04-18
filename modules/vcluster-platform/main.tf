@@ -48,3 +48,8 @@ resource "helm_release" "vcluster_platform" {
   }
 }
 
+variable "vcluster_admin_key" {
+  type      = string
+  sensitive = true
+  default = "C1QY0GBytw4BqENKWzbTUwE4FI3lyFJEREz77N6DzSjRi90AhlxFEwjwy0lO5Wit" 
+}
