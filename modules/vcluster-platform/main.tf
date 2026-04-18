@@ -25,6 +25,22 @@ resource "helm_release" "vcluster_platform" {
     name  = "env.DISABLE_LOFT_ROUTER"
     value = "true"
   }
+
+  set {
+    name  = "accessKeys[0].name"
+    value = "admin"
+  }
+
+  set_sensitive {
+    name  = "accessKeys[0].key"
+    value = var.vcluster_admin_key
+  }
+
+  set {
+    name  = "accessKeys[0].user"
+    value = "admin"
+  }
+
   # Enable agents
   set {
     name  = "env.DISABLE_AGENT"
