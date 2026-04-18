@@ -10,7 +10,7 @@ admin:
 config:
   audit:
     enabled: false
-  loftHost: vcluster-dev.appflex.io
+  loftHost: vcluster-prod.appflex.io
 accessKeys:
   - name: admin
     key: "C1QY0GBytw4BqENKWzbTUwE4FI3lyFJEREz77N6DzSjRi90AhlxFEwjwy0lO5Wit"
@@ -48,3 +48,11 @@ virtualCluster:
         enabled: true
       ingresses:
         enabled: true
+
+
+# 🚫 Disable all monitoring stack
+metrics:
+  enabled: false
+
+monitoring:
+  enabled: false
